@@ -1,0 +1,34 @@
+
+.logo {
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  /* border: 5px solid;
+  border-radius: 50%;
+  box-sizing: border-box; */
+
+  animation: spin 4s linear 0s infinite normal;
+}
+
+.logo-container {
+  animation: spin 4s linear 0s infinite reverse;
+  user-select: none;
+  pointer-events: none;
+}
+
+.running {
+  animation-play-state: running;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,9 @@
+.drop-zone {
+  width: 50vw;
+  height: 20vh;
+  border: 2px dashed black;
+}
+
+.hovered {
+  border: 2px solid black;
+}
