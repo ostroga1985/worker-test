@@ -2,8 +2,7 @@ import { getNewSizes } from './get-new-sizes'
 
 export const resizeImage = (file) => {
 	const canvas = document.createElement('canvas')
-	const offscreen = canvas.transferControlToOffscreen()
-	const ctx = offscreen.getContext('2d')
+	const ctx = canvas.getContext('2d')
 
 	const img = new Image()
 	img.src = window.URL.createObjectURL(file)
@@ -12,16 +11,11 @@ export const resizeImage = (file) => {
 		img.addEventListener('load', async () => {
 			const [width, height] = getNewSizes(img)
 
-			offscreen.width = width
-			offscreen.height = height
+			canvas.width = width
+			canvas.height = height
 
-			const imageData = await createImageBitmap(file)
-
-			ctx.drawImage(imageData, 0, 0, width, height)
-			offscreen.convertToBlob({ type: "image/webp" }).then(function (blob) {
-				imageData.close()
-				resolve(blob)
-			})
+			ctx.drawImage(img, 0, 0, width, height)
+			canvas.toBlob(resolve, 'image/webp', 0.8)
 		})
 	})
 }
