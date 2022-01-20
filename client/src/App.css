@@ -1,4 +1,4 @@
-.App {
+#root {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,4 +6,5 @@
 
 .wrapper {
   width: 60%;
+  font-size: 24px;
 }

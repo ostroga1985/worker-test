@@ -1,4 +1,6 @@
 button {
   height: 96px;
-  width: 128px;
+  width: 256px;
+
+  font-size: 24px;
 }

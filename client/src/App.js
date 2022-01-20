@@ -29,14 +29,14 @@ function App() {
         <Button clickHandler={changeDirection} />
       </Row>
       <Row>
-        <div>Image processing thread</div>
-        <Toggle clickHandler={changeStatus} />
-      </Row>
-      <Row>
         <Timer />
       </Row>
       <Row>
         <FileUploader processFiles={isMainMode ? resizeAndSend : transferToWorker} />
+      </Row>
+      <Row>
+        <div>Image processing thread</div>
+        <Toggle clickHandler={changeStatus} />
       </Row>
     </div>
   );
