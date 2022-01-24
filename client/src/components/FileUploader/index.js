@@ -14,7 +14,7 @@ export const FileUploader = ({ processFiles }) => {
 		setDrag(false)
 	}
 
-	const dropHandler = async(e) => {
+	const dropHandler = async (e) => {
 		e.preventDefault()
 
 		const files = [...e.dataTransfer.files]
@@ -24,7 +24,6 @@ export const FileUploader = ({ processFiles }) => {
 	}
 
 	const handlers = {
-		onDragStart: dragStartHandler,
 		onDragLeave: dragLeaveHandler,
 		onDragOver: dragStartHandler
 	}

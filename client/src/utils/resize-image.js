@@ -8,7 +8,7 @@ export const resizeImage = (file) => {
 	img.src = window.URL.createObjectURL(file)
 
 	return new Promise(resolve => {
-		img.addEventListener('load', async () => {
+		img.addEventListener('load', () => {
 			const [width, height] = getNewSizes(img)
 
 			canvas.width = width
